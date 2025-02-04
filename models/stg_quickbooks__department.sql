@@ -46,12 +46,10 @@ final as (
         name,
         sub_department as is_sub_department,
         parent_department_id,
-        source_relation,
-        _fivetran_deleted
+        source_relation
 
     from fields
 )
 
 select *
 from final
-where not coalesce(_fivetran_deleted, false)

@@ -1,7 +1,7 @@
 {% macro get_vendor_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "datatype": dbt.type_timestamp()},
+    {"name": "last_synced", "datatype": dbt.type_timestamp()},
     {"name": "account_number", "datatype": dbt.type_string()},
     {"name": "active", "datatype": "boolean"},
     {"name": "alternate_phone", "datatype": dbt.type_string()},
@@ -28,8 +28,7 @@
     {"name": "title", "datatype": dbt.type_string()},
     {"name": "updated_at", "datatype": dbt.type_timestamp()},
     {"name": "vendor_1099", "datatype": "boolean"},
-    {"name": "web_url", "datatype": dbt.type_string()},
-    {"name": "_fivetran_deleted", "datatype": "boolean"}
+    {"name": "web_url", "datatype": dbt.type_string()}
 ] %}
 
 {{ return(columns) }}

@@ -1,7 +1,7 @@
 {% macro get_item_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "datatype": dbt.type_timestamp()},
+    {"name": "last_synced", "datatype": dbt.type_timestamp()},
     {"name": "active", "datatype": "boolean"},
     {"name": "asset_account_id", "datatype": dbt.type_string()},
     {"name": "created_at", "datatype": dbt.type_timestamp()},
@@ -28,8 +28,7 @@
     {"name": "track_quantity_on_hand", "datatype": "boolean"},
     {"name": "type", "datatype": dbt.type_string()},
     {"name": "unit_price", "datatype": dbt.type_float()},
-    {"name": "updated_at", "datatype": dbt.type_timestamp()},
-    {"name": "_fivetran_deleted", "datatype": "boolean"}
+    {"name": "updated_at", "datatype": dbt.type_timestamp()}
 ] %}
 
 {{ return(columns) }}

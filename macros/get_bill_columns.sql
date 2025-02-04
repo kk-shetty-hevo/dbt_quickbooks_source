@@ -1,8 +1,7 @@
 {% macro get_bill_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_deleted", "datatype": "boolean"},
-    {"name": "_fivetran_synced", "datatype": dbt.type_timestamp()},
+    {"name": "last_synced", "datatype": dbt.type_timestamp()},
     {"name": "balance", "datatype": dbt.type_float()},
     {"name": "created_at", "datatype": dbt.type_timestamp()},
     {"name": "currency_id", "datatype": dbt.type_string()},

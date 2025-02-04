@@ -1,7 +1,7 @@
 {% macro get_bill_line_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "datatype": dbt.type_timestamp()},
+    {"name": "last_synced", "datatype": dbt.type_timestamp()},
     {"name": "account_expense_account_id", "datatype": dbt.type_string()},
     {"name": "account_expense_billable_status", "datatype": dbt.type_string()},
     {"name": "account_expense_class_id", "datatype": dbt.type_string()},

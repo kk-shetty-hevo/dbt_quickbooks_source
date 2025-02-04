@@ -48,11 +48,9 @@ final as (
         cast( {{ dbt.date_trunc('day', 'transaction_date') }} as date) as transaction_date,
         updated_at,
         transaction_status,
-        _fivetran_deleted,
         source_relation
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)

@@ -51,11 +51,9 @@ final as (
         cast(vendor_id as {{ dbt.type_string() }}) as vendor_id,
         created_at,
         updated_at,
-        _fivetran_deleted,
         source_relation
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)

@@ -2,9 +2,9 @@
 {{ config(enabled=var('using_bill', True)) }}
 
 select
-	to_timestamp("__HEVO__LOADED_AT" / 1000) as "last_synced",
-	"BILL_ID" as "bill_id",
-	"TXN_ID" as "bill_payment_id",
-	Null as "index"
+	to_timestamp("__HEVO__LOADED_AT" / 1000) as last_synced,
+	"BILL_ID" as bill_id,
+	"TXN_ID" as bill_payment_id,
+	Null as index
 from
-    var('bill_linked_txn')
+    {{ var('bill_linked_txn') }}

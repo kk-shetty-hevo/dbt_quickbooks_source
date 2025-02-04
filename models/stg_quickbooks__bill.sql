@@ -52,11 +52,9 @@ final as (
         total_amount,
         cast(vendor_id as {{ dbt.type_string() }}) as vendor_id,
         private_note,
-        _fivetran_deleted,
         source_relation
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)

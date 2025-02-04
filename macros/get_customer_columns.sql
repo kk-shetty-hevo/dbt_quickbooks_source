@@ -1,7 +1,7 @@
 {% macro get_customer_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "datatype": dbt.type_timestamp()},
+    {"name": "last_synced", "datatype": dbt.type_timestamp()},
     {"name": "active", "datatype": "boolean"},
     {"name": "alternate_phone_number", "datatype": dbt.type_string()},
     {"name": "ar_account_id", "datatype": dbt.type_string()},
@@ -40,8 +40,7 @@
     {"name": "taxable", "datatype": "boolean"},
     {"name": "title", "datatype": dbt.type_string()},
     {"name": "updated_at", "datatype": dbt.type_timestamp()},
-    {"name": "website", "datatype": dbt.type_string()},
-    {"name": "_fivetran_deleted", "datatype": "boolean"}
+    {"name": "website", "datatype": dbt.type_string()}
 ] %}
 
 {{ return(columns) }}

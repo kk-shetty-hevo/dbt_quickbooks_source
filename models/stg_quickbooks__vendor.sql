@@ -46,12 +46,10 @@ final as (
         display_name,
         web_url,
         vendor_1099 as is_vendor_1099,
-        source_relation,
-        _fivetran_deleted
+        source_relation
 
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)
