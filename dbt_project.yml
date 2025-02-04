@@ -10,9 +10,11 @@ profile: quickbooks_source
 models:
   quickbooks_source:
     +schema: quickbooks_staging
-    materialized: table
+    stg:
+      materialized: table
     tmp:
-      materialized: view 
+      materialized: view
+
 vars:
   quickbooks_source:
     account: "{{ source('quickbooks','account') }}"
@@ -55,6 +57,7 @@ vars:
     vendor_credit_line: "{{ source('quickbooks','vendor_credit_line') }}"
     vendor_credit: "{{ source('quickbooks','vendor_credit') }}"
     vendor: "{{ source('quickbooks','vendor') }}"
+
     using_address: false
     using_bill: true
     using_credit_memo: false
